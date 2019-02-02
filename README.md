@@ -7,3 +7,5 @@ An implementation of a simple console chat based on client-server architecture.
 ## Technologies
 * Interactive Development Environments
   * Visual Studio Enterprise 2017
+* Code formating
+  * ClangFormat
