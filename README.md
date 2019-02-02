@@ -9,3 +9,5 @@ An implementation of a simple console chat based on client-server architecture.
   * Visual Studio Enterprise 2017
 * Code formating
   * ClangFormat
+* Build system
+  * CMake
