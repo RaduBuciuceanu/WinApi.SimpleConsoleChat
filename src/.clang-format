@@ -1,0 +1,13 @@
+UseTab: Always
+TabWidth: 4
+IndentWidth: 4
+BreakBeforeBraces: Allman
+AllowShortIfStatementsOnASingleLine: false
+IndentCaseLabels: false
+ColumnLimit: 120
+AccessModifierOffset: -4
+PointerAlignment: Left
+FixNamespaceComments: false
+NamespaceIndentation: All
+AllowShortFunctionsOnASingleLine: None
+AlwaysBreakTemplateDeclarations: true
