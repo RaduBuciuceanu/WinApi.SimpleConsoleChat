@@ -9,4 +9,4 @@ add_library(${WASCC_NETWORKING_IO} SHARED ${SOURCES} ${HEADERS})
 
 target_include_directories(${WASCC_NETWORKING_IO} PUBLIC ./include)
 
-target_compile_definitions(${WASCC_NETWORKING_IO} PRIVATE ${WASCC_NETWORKING_IO}=1)
+target_compile_definitions(${WASCC_NETWORKING_IO} PRIVATE WASCC_NETWORKING_IO=1)

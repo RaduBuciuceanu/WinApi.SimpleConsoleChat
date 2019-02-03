@@ -3,6 +3,7 @@
 #include <iostream>
 
 using std::cout;
+using std::cin;
 using std::endl;
 
 string Console::write(string value)
@@ -15,4 +16,9 @@ string Console::writeLine(string value)
 {
 	cout << value << endl;
 	return value;
+}
+
+int Console::readKey()
+{
+	return cin.get();
 }

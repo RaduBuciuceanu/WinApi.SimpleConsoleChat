@@ -1,8 +1,17 @@
-#pragma once;
+#pragma once
 
 #include "Wascc.Networking.Io/Preprocessor.h"
 
-class WASCC_NETWORKING_IO IConnection
+namespace Wascc::Networking::Io
 {
-public:
+	class WASCC_NETWORKING_IO IConnection
+	{
+	public:
+		virtual ~IConnection()
+		{
+		}
+
+		virtual const char* sendBytes(const char* value) const = 0;
+		virtual const char* receiveBytes(const int bufferLength) const = 0;
+	};
 }

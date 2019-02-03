@@ -18,6 +18,7 @@
 #endif
 
 #ifdef WASCC_NETWORKING_IO
+#pragma comment(lib, "Ws2_32.lib")
 #define WASCC_NETWORKING_IO EXPORT_SYMBOL
 #else
 #define WASCC_NETWORKING_IO IMPORT_SYMBOL

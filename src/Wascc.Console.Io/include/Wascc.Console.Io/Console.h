@@ -11,4 +11,5 @@ class WASCC_CONSOLE_IO Console
 public:
 	static string write(string value);
 	static string writeLine(string value);
+	static int readKey();
 };
