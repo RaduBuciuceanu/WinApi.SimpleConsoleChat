@@ -6,6 +6,6 @@ using std::endl;
 
 int main()
 {
-    cout << "[Server]: Olla my friend!" << endl;
+    cout << "[Client]: Olla my friend!" << endl;
     return cin.get();
 }
