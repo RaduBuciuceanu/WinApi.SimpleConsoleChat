@@ -12,5 +12,7 @@ set(WASCC_CLIENT_PRESENTATION Wascc.Client.Presentation)
 set(WASCC_CLIENT_PRESENTATION_VERSION 1.0.0)
 set(WASCC_CONSOLE_IO Wascc.Console.Io)
 set(WASCC_CONSOLE_IO_VERSION 1.0.0)
+set(WASCC_NETWORKING_IO Wascc.Networking.Io)
+set(WASCC_NETWORKING_IO_VERSION 1.0.0)
 
 add_subdirectory(src)
