@@ -1,4 +1,4 @@
-#include "Wascc.Io/Console.h"
+#include "Wascc.Console.Io/Console.h"
 
 #include <iostream>
 

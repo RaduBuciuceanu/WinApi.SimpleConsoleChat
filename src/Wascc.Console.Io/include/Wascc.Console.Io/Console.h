@@ -1,12 +1,12 @@
 #pragma once
 
-#include "Wascc.Io/Preprocessor.h"
+#include "Wascc.Console.Io/Preprocessor.h"
 
 #include <string>
 
 using std::string;
 
-class WASCC_IO Console
+class WASCC_CONSOLE_IO Console
 {
 public:
 	static string write(string value);
