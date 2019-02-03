@@ -5,13 +5,13 @@
 
 namespace Wascc::Networking::Io
 {
-	class WASCC_NETWORKING_IO IConnectionListener
+	class WASCC_NETWORKING_IO IConnectionFactory
 	{
 	public:
-		virtual ~IConnectionListener()
+		virtual ~IConnectionFactory()
 		{
 		}
 
-		virtual const IConnection* acceptOne() const = 0;
+		virtual const IConnection* make() const = 0;
 	};
 }
