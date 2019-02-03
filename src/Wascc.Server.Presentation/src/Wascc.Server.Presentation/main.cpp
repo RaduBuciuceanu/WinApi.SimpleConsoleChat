@@ -2,6 +2,7 @@
 
 #define WIN32_LEAN_AND_MEAN
 
+#include "Hypodermic/ContainerBuilder.h"
 #include "Wascc.Server.Presentation/Communication.h"
 #include "Wascc.Server.Presentation/CommunicationRepository.h"
 
@@ -10,7 +11,6 @@
 #include <Wascc.Networking.Io/TcpConnection.h>
 #include <thread>
 #include <vector>
-
 
 using namespace Wascc::Networking::Io;
 using namespace Wascc::Server::Presentation;
