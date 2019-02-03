@@ -480,3 +480,5 @@ ASALocalRun/
 healthchecksdb
 
 # End of https://www.gitignore.io/api/c++,clion,cmake,visualstudio,visualstudiocode
+
+.vscode
