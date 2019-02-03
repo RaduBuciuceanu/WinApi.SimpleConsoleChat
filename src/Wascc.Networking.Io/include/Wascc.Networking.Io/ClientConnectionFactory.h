@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Wascc.Networking.Io/IConnectionFactory.h"
 #include "Wascc.Networking.Io/Preprocessor.h"
 

@@ -1,9 +1,13 @@
 #include "Wascc.Networking.Io/TcpConnection.h"
 
 #include <string.h>
+#include <exception>
+#include <minwinbase.h>
 
 namespace Wascc::Networking::Io
 {
+	using std::exception;
+
 	TcpConnection::TcpConnection(const SOCKET socket)
 	{
 		_socket = socket;
@@ -22,8 +26,15 @@ namespace Wascc::Networking::Io
 
 	const char* TcpConnection::receiveBytes(const int bufferLength) const
 	{
-		auto buffer = new char[bufferLength];
-		recv(_socket, buffer, bufferLength, 0);
+		const auto buffer = new char[bufferLength];
+		ZeroMemory(buffer, bufferLength);
+		const int receivedCount = recv(_socket, buffer, bufferLength, 0);
+
+		if (receivedCount <= 0)
+		{
+			throw exception("Connection closed.");
+		}
+
 		return buffer;
 	}
 }

@@ -7,37 +7,15 @@
 #include <Wascc.Console.Io/Console.h>
 #include <Wascc.Networking.Io/ClientConnectionFactory.h>
 #include <exception>
+#include <thread>
 
 using namespace Wascc::Networking::Io;
 using std::exception;
+using std::thread;
 
 const IConnectionFactory* factory;
 const IConnection* connection;
-
-const IConnectionFactory* buildConnectionFactory();
-const IConnection* buildConnection();
-
-int main()
-{
-	Console::writeLine("Client started...");
-
-	try
-	{
-		factory = buildConnectionFactory();
-		connection = buildConnection();
-		connection->sendBytes("123");
-	}
-	catch (const exception& e)
-	{
-		Console::writeLine(e.what());
-	}
-
-	delete connection;
-	delete factory;
-
-	Console::write("Client stopped...");
-	return Console::readKey();
-}
+string name;
 
 const IConnectionFactory* buildConnectionFactory()
 {
@@ -51,6 +29,51 @@ const IConnection* buildConnection()
 {
 	Console::writeLine("Opening a connction with server...");
 	const IConnection* connection = factory->make();
-	Console::writeLine("Connction with server was opened...");
+	Console::writeLine("Connection with server was opened...");
 	return connection;
+}
+
+void sendMessages()
+{
+	while (true)
+	{
+		string message = Console::readLine();
+		connection->sendBytes(message.c_str());
+	}
+}
+
+void receiveMessages()
+{
+	while (true)
+	{
+		const auto message = connection->receiveBytes(256);
+		Console::writeLine(message);
+	}
+}
+
+int main()
+{
+	Console::writeLine("Client started...");
+	Console::write("Name: ");
+	name = Console::readLine();
+
+	try
+	{
+		factory = buildConnectionFactory();
+		connection = buildConnection();
+		connection->sendBytes(name.c_str());
+
+		thread(sendMessages).detach();
+		receiveMessages();
+	}
+	catch (const exception& e)
+	{
+		Console::writeLine(e.what());
+	}
+
+	delete connection;
+	delete factory;
+
+	Console::write("Client stopped...");
+	return Console::readKey();
 }

@@ -12,4 +12,5 @@ public:
 	static string write(string value);
 	static string writeLine(string value);
 	static int readKey();
+	static string readLine();
 };
